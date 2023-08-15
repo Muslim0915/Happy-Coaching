@@ -17,6 +17,8 @@
   align-items: center;
 }
 
+$main-title-color: #333461;
+
 * {
   margin: 0;
   padding: 0;
@@ -105,7 +107,8 @@ nav {
   }
 
 }
-.nav-link.active{
+
+.nav-link.active {
   &::before {
     content: '';
     position: absolute;
@@ -151,7 +154,7 @@ header {
 
     .title {
       margin: 6px 0 18px 0;
-      color: #333461;
+      color: $main-title-color;
       font-family: KumbhSans-ExtraBold, sans-serif;
       font-size: 72px;
       line-height: 86px;
@@ -225,7 +228,7 @@ header {
       font-size: 48px;
       line-height: 56px;
       letter-spacing: -0.01em;
-      color: #333461;
+      color: $main-title-color;
     }
 
     .text, p {
@@ -271,6 +274,56 @@ header {
   }
 }
 
+.section-review {
+  .title {
+    font-family: KumbhSans-ExtraBold, sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: $main-title-color;
+
+  }
+
+  .row {
+
+    .card {
+      display: flex;
+
+      flex-direction: column-reverse;
+      width: 400px;
+
+      .card-head {
+        order: 3;
+      }
+
+      .card-footer {
+        order: 1;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -3%;
+        span{
+          font-family: KumbhSans-Bold, sans-serif;
+        }
+      }
+
+    }
+
+
+    .stars {
+      @extend %display-flex;
+      width: 116px;
+
+      .star {
+        width: 20px;
+        height: 20px;
+        img.active{
+          fill: #FEC84B;
+        }
+      }
+    }
+  }
+}
+
 //media query
 @media (max-width: 768px) {
   .container {
@@ -282,7 +335,7 @@ header {
     width: 100%;
     height: 60px;
 
-    .container{
+    .container {
       padding: 0;
     }
   }
@@ -411,6 +464,7 @@ header {
   .section-introduction {
     .row {
       margin-bottom: 40px;
+
       .title:first-child {
         width: 80%;
         margin-bottom: 20px;
@@ -423,19 +477,22 @@ header {
         height: auto;
         padding: 0;
         margin-bottom: 40px;
-        &:last-child{
+
+        &:last-child {
           margin-bottom: 0;
         }
-        .card-footer{
+
+        .card-footer {
           position: relative;
-          &::after{
+
+          &::after {
             content: '';
             position: absolute;
             left: 0;
             bottom: -10px;
             width: 100%;
             height: 3px;
-            background-color: #333461;
+            background-color: $main-title-color;
           }
         }
       }
