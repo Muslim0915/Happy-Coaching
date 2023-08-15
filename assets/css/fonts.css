@@ -1,0 +1,45 @@
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-Regular.ttf") format('truetype');
+    font-family: KumbhSans-Regular;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-Medium.ttf") format('truetype');
+    font-family: KumbhSans-Medium;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-SemiBold.ttf");
+    font-family: KumbhSans-SemiBold;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-Bold.ttf");
+    font-family: KumbhSans-Bold;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-ExtraBold.ttf");
+    font-family: KumbhSans-ExtraBold;
+}
+
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-Black.ttf");
+    font-family: KumbhSans-Black;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-Light.ttf");
+    font-family: KumbhSans-Light;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-ExtraLight.ttf");
+    font-family: KumbhSans-ExtraLight;
+}
+@font-face {
+    src: url("../fonts/Kumbh_Sans/static/KumbhSans-Thin.ttf");
+    font-family: KumbhSans-Light;
+}
+@font-face {
+    src: url("../fonts/Averta_Standard-www.Dfonts.org/AvertaStd-Regular.ttf");
+    font-family: AvertaStd-Regular;
+}
+@font-face {
+    src: url("../fonts/Averta_Standard-www.Dfonts.org/AvertaStd-Black.ttf");
+    font-family: AvertaStd-Black;
+}
