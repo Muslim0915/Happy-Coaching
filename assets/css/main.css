@@ -1,6 +1,5 @@
-@charset "UTF-8";
 @import url("../css/fonts.css");
-.nav-btn, .section-hero .hero-info button, .section-btn button {
+.nav-btn, .section-hero .hero-info button, .section-review .cards .card .confirm-btn button, .section-btn button, .section-cta .content button, footer .footer-head .container form input[type='submit'] {
   border: 0;
   outline: none;
   background-color: #20AD96;
@@ -8,16 +7,17 @@
   height: 40px;
   font-family: KumbhSans-SemiBold, sans-serif;
   border-radius: 4px;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
 
-.section-hero .hero-info .title, .section-introduction .row .title, .section-review .title, .section-blogs .title span, .section-guide .content .info-content .title, .section-guide .content .card > .title {
+.section-hero .hero-info .title, .section-introduction .row .title, .section-review .title, .section-blogs .title span, .section-guide .content .info-content .title, .section-guide .content .card > .title, .section-cta .content .title, footer .footer-head .container .content .title {
   font-family: KumbhSans-ExtraBold, sans-serif;
   font-size: 48px;
   line-height: 56px;
   letter-spacing: -0.01em;
   color: #333461; }
 
-.navbar, .navbar .nav-menu, .section-hero, .section-hero .hero-image .hero-overlay, .section-introduction .row, .section-review .cards, .section-btn, .section-blogs .title, .section-blogs .cards, .section-guide .content {
+.navbar, .navbar .nav-menu, .section-hero, .section-hero .hero-image .hero-overlay, .section-introduction .row, .section-review .cards, .section-btn, .section-blogs .title, .section-blogs .cards, .section-guide .content, footer .footer-head .container, footer .footer-body .container {
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -35,6 +35,9 @@
 a {
   text-decoration: none;
   color: #000; }
+
+button {
+  cursor: pointer; }
 
 li {
   list-style: none; }
@@ -101,6 +104,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .nav-btn a {
+    color: #ffffff; }
 
 header {
   background-color: #FAF8F6; }
@@ -129,6 +134,8 @@ header {
       margin-bottom: 18px; }
     .section-hero .hero-info button {
       margin-bottom: 141px; }
+      .section-hero .hero-info button a {
+        color: #ffffff; }
   .section-hero .hero-image .image {
     right: 0;
     width: 462px;
@@ -201,7 +208,8 @@ header {
       width: 400px;
       height: 391px;
       background-color: #ffffff;
-      padding: 48px; }
+      padding: 48px;
+      position: relative; }
       .section-review .cards .card:nth-child(2) .avatar {
         background: url("../images/svg/Catherine.svg"); }
       .section-review .cards .card:last-child .avatar {
@@ -224,36 +232,27 @@ header {
         line-height: 32px;
         letter-spacing: -0.03em;
         margin: 15px 0 15px 0; }
-      .section-review .cards .card .card-footer {
-        /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */ }
-        .section-review .cards .card .card-footer .rate {
-          float: left;
-          height: 46px;
-          padding: 0 10px; }
-        .section-review .cards .card .card-footer .rate:not(:checked) > input {
-          position: absolute;
-          top: -9999px; }
-        .section-review .cards .card .card-footer .rate:not(:checked) > label {
-          float: right;
-          width: 1em;
-          overflow: hidden;
-          white-space: nowrap;
-          cursor: pointer;
-          font-size: 30px;
-          color: #ccc; }
-        .section-review .cards .card .card-footer .rate:not(:checked) > label:before {
-          content: '★ '; }
-        .section-review .cards .card .card-footer .rate > input:checked ~ label {
-          color: #ffc700; }
-        .section-review .cards .card .card-footer .rate:not(:checked) > label:hover,
-        .section-review .cards .card .card-footer .rate:not(:checked) > label:hover ~ label {
-          color: #deb217; }
-        .section-review .cards .card .card-footer .rate > input:checked + label:hover,
-        .section-review .cards .card .card-footer .rate > input:checked + label:hover ~ label,
-        .section-review .cards .card .card-footer .rate > input:checked ~ label:hover,
-        .section-review .cards .card .card-footer .rate > input:checked ~ label:hover ~ label,
-        .section-review .cards .card .card-footer .rate > label:hover ~ input:checked ~ label {
-          color: #c59b08; }
+      .section-review .cards .card .stars {
+        width: 115px;
+        height: 20px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .section-review .cards .card .stars .star {
+          color: #4A556C;
+          font-size: 20px;
+          cursor: pointer; }
+        .section-review .cards .card .stars .star.checked {
+          color: orange; }
+      .section-review .cards .card .confirm-btn {
+        position: absolute;
+        right: 10px;
+        display: none; }
+        .section-review .cards .card .confirm-btn button {
+          width: 100px; }
+      .section-review .cards .card .confirm-btn.active {
+        display: block; }
 
 .section-btn {
   justify-content: center;
@@ -266,6 +265,8 @@ header {
     width: 250px;
     height: 42px;
     border-radius: 10px; }
+    .section-btn button a {
+      color: #ffffff; }
 
 .section-blogs {
   padding: 97px 0; }
@@ -383,6 +384,100 @@ header {
         line-height: 18px;
         font-family: KumbhSans-Regular, sans-serif;
         color: #ffffff; }
+
+.section-cta .container {
+  position: relative;
+  display: flex;
+  margin-bottom: 96px; }
+.section-cta .overlay {
+  width: 95%;
+  height: 480px;
+  position: absolute;
+  left: -8px;
+  top: 0;
+  background: #FAF8F6;
+  z-index: -1;
+  border-radius: 50px; }
+.section-cta .content {
+  padding: 50px 0 50px 50px; }
+  .section-cta .content .title {
+    font-size: 36px;
+    line-height: 47px;
+    width: 550px;
+    height: 90px; }
+  .section-cta .content .text {
+    color: #4A556C;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 20px 0 40px 0; }
+  .section-cta .content button {
+    width: 250px;
+    height: 42px;
+    border-radius: 10px; }
+.section-cta .section-image {
+  margin-left: 48px;
+  background-image: url("../images/jpg/hero-2.jpg");
+  background-size: 147%;
+  background-position: 14% 23%;
+  border-bottom-right-radius: 50px;
+  width: 560px;
+  transform: translateY(48px);
+  padding-top: 20px;
+  padding-left: 20px;
+  height: 432px; }
+.section-cta a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  width: 84px;
+  height: 32px;
+  background: #ffffff;
+  color: #20AD96; }
+  .section-cta a img {
+    margin-right: 8px; }
+
+footer .footer-head {
+  background: #FAF8F6; }
+  footer .footer-head .container {
+    padding: 68px 0;
+    justify-content: flex-start; }
+    footer .footer-head .container .content {
+      margin-right: 32px; }
+      footer .footer-head .container .content .title {
+        font-size: 30px;
+        line-height: 38px; }
+      footer .footer-head .container .content .text {
+        color: #4A556C;
+        font-size: 20px;
+        line-height: 30px; }
+  footer .footer-head #email {
+    width: 280px;
+    height: 44px;
+    border-radius: 6px;
+    border: none;
+    margin-right: 16px;
+    padding-left: 14px; }
+    footer .footer-head #email::placeholder {
+      color: #C1C4CC;
+      font-size: 16px;
+      line-height: 24px; }
+    footer .footer-head #email:focus-visible {
+      outline: none; }
+footer .footer-body .container {
+  align-items: start;
+  margin: 64px 0; }
+footer .footer-body .footer-info .logo {
+  margin-bottom: 32px; }
+footer .footer-body .footer-info .text {
+  width: 320px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4A556C; }
+footer .footer-body .title {
+  font-family: KumbhSans-ExtraBold, sans-serif; }
 
 @media (max-width: 768px) {
   .container {

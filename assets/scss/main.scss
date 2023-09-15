@@ -12,6 +12,7 @@ $main-text-color: #4A556C;
   font-family: KumbhSans-SemiBold, sans-serif;
   border-radius: 4px;
   color: #fff;
+  cursor: pointer;
 }
 
 %section-title {
@@ -44,6 +45,10 @@ $main-text-color: #4A556C;
 a {
   text-decoration: none;
   color: #000;
+}
+
+button {
+  cursor: pointer;
 }
 
 li {
@@ -140,6 +145,10 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  a {
+    color: #ffffff;
+  }
 }
 
 header {
@@ -183,6 +192,9 @@ header {
       @extend %mainBtn;
       margin-bottom: 141px;
 
+      a {
+        color: #ffffff;
+      }
     }
   }
 
@@ -302,6 +314,7 @@ header {
       height: 391px;
       background-color: #ffffff;
       padding: 48px;
+      position: relative;
 
       &:nth-child(2) {
         .avatar {
@@ -346,51 +359,36 @@ header {
 
       }
 
-      .card-footer {
 
-        .rate {
-          float: left;
-          height: 46px;
-          padding: 0 10px;
-        }
-
-        .rate:not(:checked) > input {
-          position: absolute;
-          top: -9999px;
-        }
-
-        .rate:not(:checked) > label {
-          float: right;
-          width: 1em;
-          overflow: hidden;
-          white-space: nowrap;
+      .stars {
+        width: 115px;
+        height: 20px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .star{
+          color: $main-text-color;
+          font-size: 20px;
           cursor: pointer;
-          font-size: 30px;
-          color: #ccc;
         }
-
-        .rate:not(:checked) > label:before {
-          content: '★ ';
+        .star.checked {
+          color: orange;
         }
+      }
+      .confirm-btn{
+        position: absolute;
+        right: 10px;
+        display: none;
+        button{
+          @extend %mainBtn;
+          width: 100px;
+          
 
-        .rate > input:checked ~ label {
-          color: #ffc700;
         }
-
-        .rate:not(:checked) > label:hover,
-        .rate:not(:checked) > label:hover ~ label {
-          color: #deb217;
-        }
-
-        .rate > input:checked + label:hover,
-        .rate > input:checked + label:hover ~ label,
-        .rate > input:checked ~ label:hover,
-        .rate > input:checked ~ label:hover ~ label,
-        .rate > label:hover ~ input:checked ~ label {
-          color: #c59b08;
-        }
-
-        /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+      }
+      .confirm-btn.active{
+        display: block;
       }
     }
   }
@@ -410,6 +408,10 @@ header {
     width: 250px;
     height: 42px;
     border-radius: 10px;
+
+    a {
+      color: #ffffff;
+    }
   }
 }
 
@@ -611,6 +613,167 @@ header {
     }
   }
 }
+
+.section-cta {
+  .container {
+    position: relative;
+    display: flex;
+    margin-bottom: 96px;
+
+  }
+
+  .overlay {
+    width: 95%;
+    height: 480px;
+    position: absolute;
+    left: -8px;
+    top: 0;
+    background: #FAF8F6;
+    z-index: -1;
+    border-radius: 50px;
+  }
+
+  .content {
+    padding: 50px 0 50px 50px;
+
+    .title {
+      @extend %section-title;
+      font-size: 36px;
+      line-height: 47px;
+      width: 550px;
+      height: 90px;
+    }
+
+    .text {
+      color: $main-text-color;
+      font-size: 20px;
+      line-height: 30px;
+      margin: 20px 0 40px 0;
+    }
+
+    button {
+      @extend %mainBtn;
+      width: 250px;
+      height: 42px;
+      border-radius: 10px;
+    }
+  }
+
+  .section-image {
+    margin-left: 48px;
+    background: {
+      image: url("../images/jpg/hero-2.jpg");
+      size: 147%;
+      position: 14% 23%;
+    };
+    border-bottom-right-radius: 50px;
+    width: 560px;
+    transform: translateY(48px);
+    padding: {
+      top: 20px;
+      left: 20px;
+    };
+    height: 432px;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    width: 84px;
+    height: 32px;
+    background: #ffffff;
+    color: #20AD96;
+
+    img {
+      margin-right: 8px;
+    }
+  }
+}
+
+footer {
+  .footer-head {
+    background: #FAF8F6;
+
+    .container {
+      padding: 68px 0;
+      @extend %display-flex;
+      justify-content: flex-start;
+
+      .content {
+        margin-right: 32px;
+
+        .title {
+          @extend %section-title;
+          font-size: 30px;
+          line-height: 38px;
+        }
+
+        .text {
+          color: $main-text-color;
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      form {
+        input[type='submit'] {
+          @extend %mainBtn;
+        }
+      }
+    }
+
+    #email {
+      width: 280px;
+      height: 44px;
+      border-radius: 6px;
+      border: none;
+      margin-right: 16px;
+      padding: {
+        left: 14px;
+      };
+
+      &::placeholder {
+        color: #C1C4CC;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+  .footer-body{
+    .container{
+      @extend %display-flex;
+      align-items: start;
+      margin: 64px 0;
+    }
+    .footer-info{
+      .logo{
+        margin-bottom: 32px;
+      }
+      .text{
+        width: 320px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $main-text-color;
+      }
+
+    }
+    .title{
+      font-family: KumbhSans-ExtraBold, sans-serif;
+    }
+    .footer-menu{
+
+    }
+  }
+}
+
 
 //media query
 @media (max-width: 768px) {

@@ -8,7 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="test" />
-    <orderEntry type="module" module-name="Star-rating-using-pure-css" />
+    <orderEntry type="library" name="font-awesome" level="application" />
   </component>
 </module>
