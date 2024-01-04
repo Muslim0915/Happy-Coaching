@@ -5,8 +5,8 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="assets/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Happy Coaching</title>
 </head>
 <body>
@@ -20,36 +20,36 @@
                     <a href="index.html"><img alt="" src="assets/images/svg/Logo.svg"></a>
                 </div>
                 <ul class="nav-menu">
-                    <li class="nav-list"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-list"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-list"><a class="nav-link" href="#">About us</a></li>
-                    <li class="nav-list"><a class="nav-link" href="#">Extra Salespage</a></li>
+                    <li class="nav-list"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-list"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-list"><a class="nav-link" href="#about">About us</a></li>
+                    <li class="nav-list"><a class="nav-link" href="#extra">Extra Salespage</a></li>
                     <li class="nav-btn"><a href="#">Get your free guide now</a></li>
                 </ul>
                 <button class="burger-menu"><span></span></button>
             </div>
         </div>
     </nav>
-    <header>
+    <header id="home">
         <div class="container">
             <div class="section-hero">
                 <div class="hero-info">
                     <div class="sup-title">Proven strategies backed by science for success.</div>
-                    <div class="title">Live life at the full potential</div>
-                    <div class="text">I help people to discover their true potential and live a fulfilling life...
+                    <h1 class="title">Live life at the full potential</h1>
+                    <p class="text">I help people to discover their true potential and live a fulfilling life...
                         Discover the simple 3 steps that I discovered to hack productivity. It just works and it is
                         begin using backed by science. Wanna transform your life?
-                    </div>
+                    </p>
                     <button><a href="#">Get your free guide now</a></button>
                 </div>
                 <div class="hero-image">
                     <div class="image">
                         <div class="hero-overlay">
                             <img alt="target" src="assets/images/svg/target.svg">
-                            <div class="title">
+                            <h2 class="title">
                                 100%
                                 <div class="sub-title">Success rate this year</div>
-                            </div>
+                            </h2>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
         </div>
     </header>
     <main>
-        <section class="section-introduction">
+        <section class="section-introduction" id="services">
             <div class="container">
                 <div class="row">
                     <div class="title">
@@ -119,7 +119,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-review">
+        <section id="about" class="section-review">
             <div class="container">
                 <div class="title">
                     Hear out what my clients say about me.
@@ -163,9 +163,9 @@
                         </div>
                         <div class="card">
                             <div class="card-head">
-                                "I gained so much <span>confidence</span> in my ability to connect and deepen my
+                            &quot;I gained so much <span>confidence</span> in my ability to connect and deepen my
                                 relationships with
-                                people. "
+                                people. &quot;
                             </div>
                             <div class="card-body">
                                 Jane
@@ -247,12 +247,12 @@
                 </div>
             </div>
         </section>
-        <section class="section-guide">
+        <section id="extra" class="section-guide">
             <div class="container">
                 <div class="content">
                     <div class="info-content">
                         <div class="title">
-                            Don’t miss out on my ‘Live life at the full potential’ free guide
+                            Don&rsquo;t miss out on my &lsquo;Live life at the full potential&rsquo; free guide
                         </div>
                         <div class="text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -313,7 +313,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
 
         <div class="footer-head">
             <div class="container">
@@ -372,6 +372,7 @@
 
 </div>
 
-<script src="js/stars.js"></script>
+<script src="assets/js/stars.js"></script>
+<script src="assets/js/index.js"></script>
 </body>
 </html>

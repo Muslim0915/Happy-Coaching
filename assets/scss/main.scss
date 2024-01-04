@@ -37,6 +37,9 @@ $main-text-color: #4A556C;
   font-size: 14px;
   font-family: KumbhSans-Regular, sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .burger-menu {
   display: none;
@@ -665,6 +668,7 @@ header {
       image: url("../images/jpg/hero-2.jpg");
       size: 147%;
       position: 14% 23%;
+      repeat: no-repeat;
     };
     border-bottom-right-radius: 50px;
     width: 560px;
@@ -768,9 +772,19 @@ footer {
     .title{
       font-family: KumbhSans-ExtraBold, sans-serif;
     }
-    .footer-menu{
 
+      .footer-list, .contact-list{
+        margin-top: 10px;
+      }
+
+
+  }
+  a{
+    transition: all ease-in-out .4s;
+    &:hover{
+      opacity: 0.7;
     }
+
   }
 }
 
@@ -792,16 +806,17 @@ footer {
   }
 
 
-  .logo {
-    margin-right: 0;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
+
   .navbar {
     position: relative;
     top: -25px;
     z-index: 12;
+    .logo {
+      margin-right: 0;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
 
     .nav-menu {
       display: block;
@@ -976,6 +991,26 @@ footer {
         line-height: 48px;
         text-align: left;
       }
+    }
+  }
+  .section-guide{
+    margin-bottom: 100px;
+    .container{
+    .content{
+      flex-direction: column;
+    }
+    }
+
+  }
+  .section-cta{
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  footer.footer{
+    .logo{
+      margin-right: 0;
     }
   }
 }
